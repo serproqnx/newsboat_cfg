@@ -1,6 +1,7 @@
 auto-reload yes
-
-browser "/mnt/c/'Program Files (x86)'/BraveSoftware/Brave-Browser/Application/brave.exe %u"
+reload-threads 10
+selecttag-format "%4i %T Unread:%n"
+browser "/mnt/c/'Program Files'/BraveSoftware/Brave-Browser/Application/brave.exe --new-window %u"
 
 
 bind-key j down
@@ -21,16 +22,15 @@ bind-key N prev-unread
 bind-key D pb-download
 bind-key U show-urls
 bind-key x pb-delete
-bind-key t open-all-unread-in-browser-and-mark-read
 bind-key r goto-url
 
 
-color listnormal cyan default
-color listfocus black yellow standout bold
-color listnormal_unread blue default
-color listfocus_unread yellow default bold
+color listnormal color235 default
+color listfocus black color172 standout bold
+color listnormal_unread color166 default
+color listfocus_unread yellow color234 bold
 color info red black bold
-color article cyan default
+color article color94 default
 
 highlight article "^Feed:.*" color5 color0
 highlight article "^Title:.*" color3 color0 bold
@@ -42,4 +42,4 @@ highlight article "\\[[0-9][0-9]*\\]" color66 default bold
 highlight article "\\[image [0-9][0-9]*\\]" color189 default bold
 highlight article "\\[embedded flash: [0-9][0-9]*\\]" color66 default bold
 
-macro v set browser "setsid nohup '/mnt/c/Program Files/VideoLAN/VLC/vlc.exe' %u" ; open-in-browser ; set browser "/mnt/c/'Program Files (x86)'/BraveSoftware/Brave-Browser/Application/brave.exe"
+macro v set browser "setsid nohup '/mnt/c/Program Files/VideoLAN/VLC/vlc.exe' %u" ; open-in-browser ; set browser "/mnt/c/'Program Files'/BraveSoftware/Brave-Browser/Application/brave.exe --new-window"
